@@ -1,0 +1,40 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Hi, my name is LuciferX. I am responsible for testing your project before commit'
+
+# Check Prettier standards
+echo '🌈 Checking Prettier standards'
+yarn check:format ||
+(
+  echo '🤢🤮 Prettier Check Failed. Your code styling not looking good. 🤢🤮  Run yarn format:fix, add changes and try commit again.';
+  # false;
+)
+
+# Fixing formatting issues
+echo "I'm fixing your code styling. 🤓🤓";
+yarn format:fix
+
+# Check ESLint Standards
+echo '🛠️ Checking ESLint standards'
+yarn check:lint ||
+(
+  echo '😤🏀 ESLint Check Failed. Your code may have some linting issues. 👋😤 Make the required changes listed above, add changes and try to commit again.'
+  # false; 
+)
+
+# Fixing linting issues
+echo "I'm fixing your linting issues. 🤓🤓";
+yarn lint:fix
+
+# If everything passes... Now we can commit
+echo '🤔🤔 Alright.... Code looks good to me... Trying to build now. 🤔🤔'
+
+yarn build ||
+(
+  echo '🔨❌ Better call LuciferX... Because your build failed 🔨❌ Next build failed: View the errors above to see why.'
+  false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅ You win this time... I am committing this now. ✅✅'
