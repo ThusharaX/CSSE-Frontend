@@ -11,9 +11,10 @@ const SiteManagerContext = createContext();
 export function SiteManagerProvider({ children }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [message, setMessage] = useState(null);
 	const navigate = useNavigate();
 
-	const [siteManagers, setSiteManagers] = useState({
+	const [siteManager, setSiteManager] = useState({
 		uID: "",
 		name: "",
 		email: "",
@@ -23,7 +24,7 @@ export function SiteManagerProvider({ children }) {
 	});
 
 	// Get all Site managers
-	const [siteManager, setSiteManager] = useState([]);
+	const [siteManagers, setSiteManagers] = useState([]);
 
 	// Login Form Validation
 	const LoginFormSchema = Joi.object({
@@ -63,12 +64,61 @@ export function SiteManagerProvider({ children }) {
 			});
 	};
 
+	// Delete Site Manager
+	const deleteSiteManager = async (id) => {
+		try {
+			setIsLoading(true);
+			await SiteManagerAPI.deleteSiteManager(id);
+			setSiteManagers(siteManager.filter((siteManager) => siteManager._id !== id));
+			makeToast({ type: "success", message: "Admin deleted successfully" });
+			setIsLoading(false);
+		} catch (error) {
+			// eslint-disable-next-line no-console
+			console.log(error);
+		}
+	};
+
+	// Update Site Manager
+	const updateSiteManager = (values) => {
+		const uID = localStorage.getItem("uID");
+		setIsLoading(true);
+		SiteManagerAPI.updateSiteManager(uID, values)
+			.then((response) => {
+				setSiteManager(response.data);
+				setIsLoading(false);
+				makeToast({ type: "success", message: "Profile Updated Successfully" });
+				navigate("/admin");
+			})
+			.catch((err) => {
+				setMessage(err.response.data.details.message);
+				setIsLoading(false);
+			});
+	};
+
+	useEffect(() => {
+		if (localStorage.getItem("uID")) {
+			SiteManagerAPI.getAdminDetails(localStorage.getItem("uID")).then((response) => {
+				setSiteManager(response.data);
+			});
+			// AdminAPI.getAllAdmins().then((response) => {
+			// 	setAdmins(response.data);
+			// });
+		}
+	}, [siteManagers]);
+
 	return (
 		<SiteManagerContext.Provider
 			value={{
 				isLoading,
 				isLoggedIn,
 				siteManagerLogin,
+				deleteSiteManager,
+				siteManager,
+				siteManagers,
+				setSiteManagers,
+				setSiteManager,
+				updateSiteManager,
+				message,
 			}}
 		>
 			{children}
