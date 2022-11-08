@@ -6,9 +6,15 @@ const CheckLoginStatus = () => {
 
 	if (permissionLevel === "ADMIN") {
 		return <Navigate to="/admin" />;
-	} else {
+	}
+	if (permissionLevel === "SITE_MANAGER") {
+		return <Navigate to="/site-manager" />;
+	}	
+	else {
 		return <Outlet />;
 	}
+
+	
 
 	// If the user is authenticated then redirect to the dashboard
 	// Otherwise redirect to the login page

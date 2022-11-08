@@ -66,8 +66,16 @@ const AppRoutes = () => {
 					</Route>
 
 					{/* Site Manager*/}
-					<Route path="/site-manager/login" element={<SiteManagerLogin />} />
-					<Route path="/site-manager" element={<SiteManagerDashboard />} />
+
+					{/* Check Login Status */}
+					<Route exact path="/site-manager/login" element={<CheckLoginStatus />}>
+						<Route exact path="/site-manager/login" element={<SiteManagerLogin />} />
+					</Route>
+
+					{/* Site Manager Private Routes */}
+					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
+						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
+					</Route>
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
