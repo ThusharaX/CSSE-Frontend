@@ -6,6 +6,9 @@ const CheckLoginStatus = () => {
 
 	if (permissionLevel === "ADMIN") {
 		return <Navigate to="/admin" />;
+	}
+	if (permissionLevel === "SITE_MANAGER") {
+		return <Navigate to="/site-manager" />;
 	} else {
 		return <Outlet />;
 	}

@@ -16,6 +16,10 @@ import SampleEdit from "./sample-edit";
 import SampleReport from "./sample-report";
 import Sample from "./sample";
 
+// Site Manager
+import SiteManagerLogin from "./sitemanager-login";
+import SiteManagerDashboard from "./sitemanager-dashboard";
+
 export {
 	// Common
 	Home,
@@ -34,4 +38,8 @@ export {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	// Site Manager
+	SiteManagerLogin,
+	SiteManagerDashboard,
 };

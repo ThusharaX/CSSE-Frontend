@@ -27,6 +27,10 @@ import {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	// Site Manager
+	SiteManagerLogin,
+	SiteManagerDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -59,6 +63,18 @@ const AppRoutes = () => {
 						<Route exact path="/admin/edit-sample/:id" element={<SampleEdit />} />
 						<Route exact path="/admin/manage-samples" element={<AdminManageSamples />} />
 						<Route exact path="/admin/report" element={<SampleReport />} />
+					</Route>
+
+					{/* Site Manager*/}
+
+					{/* Check Login Status */}
+					<Route exact path="/site-manager/login" element={<CheckLoginStatus />}>
+						<Route exact path="/site-manager/login" element={<SiteManagerLogin />} />
+					</Route>
+
+					{/* Site Manager Private Routes */}
+					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
+						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
 					</Route>
 
 					{/* 404 */}
