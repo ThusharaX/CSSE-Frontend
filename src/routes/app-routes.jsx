@@ -27,6 +27,10 @@ import {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	// Site Manager
+	SiteManagerLogin,
+	SiteManagerDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -60,6 +64,10 @@ const AppRoutes = () => {
 						<Route exact path="/admin/manage-samples" element={<AdminManageSamples />} />
 						<Route exact path="/admin/report" element={<SampleReport />} />
 					</Route>
+
+					{/* Site Manager*/}
+					<Route path="/site-manager/login" element={<SiteManagerLogin />} />
+					<Route path="/site-manager" element={<SiteManagerDashboard />} />
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
