@@ -53,10 +53,8 @@ export {
 	Sample,
 
 	//supplier
-
 	SupplierDashboard,
 	SupplierLogin,
-
 
 	// Site Manager
 	SiteManagerLogin,
