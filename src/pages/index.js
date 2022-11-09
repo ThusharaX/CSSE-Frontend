@@ -16,6 +16,11 @@ import SampleEdit from "./sample-edit";
 import SampleReport from "./sample-report";
 import Sample from "./sample";
 
+//supplier
+
+import SupplierDashboard from "./supplier-dashboard";
+import SupplierLogin from "./supplier-login";
+
 // Site Manager
 import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
@@ -46,6 +51,12 @@ export {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	//supplier
+
+	SupplierDashboard,
+	SupplierLogin,
+
 
 	// Site Manager
 	SiteManagerLogin,
