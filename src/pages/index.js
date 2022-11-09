@@ -21,8 +21,8 @@ import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
 
 //Procurment Sfaff
-import ProcurementStaffLogin from "./procurementstaff-login";
-import ProcurementStaffDashboard from "./procurementstaff-dashboard";
+import ProcurementStaffLogin from "./procurementStaff-login";
+import ProcurementStaffDashboard from "./procurementStaff-dashboard";
 
 export {
 	// Common
