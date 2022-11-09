@@ -1,10 +1,14 @@
 import React from "react";
 import SiteManagerDashboard from "./SiteManagerDashboard";
 
+import { SiteManagerProvider } from "../../contexts/SiteManagerContext";
+
 const index = () => {
 	return (
 		<>
-			<SiteManagerDashboard />
+			<SiteManagerProvider>
+				<SiteManagerDashboard />
+			</SiteManagerProvider>
 		</>
 	);
 };

@@ -1,30 +1,29 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ProcurementStaffAPI from "./api/ProcurementStaffAPI";
+import SupplierAPI from "./api/SupplierAPI";
 
 import Joi from "joi";
 
 import { makeToast } from "../components";
 
-const ProcurementStaffContext = createContext();
+const SupplierContext = createContext();
 
-export function ProcurementStaffProvider({ children }) {
+export function SupplierProvider({ children }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [message, setMessage] = useState(null);
 	const navigate = useNavigate();
 
-	const [procurementStaff, setProcurementStaff] = useState({
+	const [supplier, setSupplier] = useState({
 		uID: "",
 		name: "",
 		email: "",
 		password: "",
 		contact: "",
-		nic: "",
 	});
 
-	// Get all Procurement Staff
-	const [procurementStaffs, setProcurementStaffs] = useState([]);
+	// Get all Suppliers
+	const [suppliers, setSuppliers] = useState([]);
 
 	// Login Form Validation
 	const LoginFormSchema = Joi.object({
@@ -34,8 +33,8 @@ export function ProcurementStaffProvider({ children }) {
 		password: Joi.string().min(3).message("Password should be valid"),
 	});
 
-	// Procurement Staff Login
-	const login = (values) => {
+	// Site Manager Login
+	const supplierLogin = (values) => {
 		setIsLoading(true);
 		// Validate
 		const { error } = LoginFormSchema.validate(values);
@@ -44,13 +43,13 @@ export function ProcurementStaffProvider({ children }) {
 			return;
 		}
 
-		ProcurementStaffAPI.login(values)
+		SupplierAPI.loginSupplier(values)
 			.then((response) => {
 				localStorage.setItem("uID", response.data._id);
 				localStorage.setItem("email", response.data.email);
 				localStorage.setItem("authToken", response.data.token);
 				localStorage.setItem("permissionLevel", response.data.permissionLevel);
-				navigate("/procurement-staff");
+				navigate("/supplier");
 				setIsLoggedIn(true);
 				setIsLoading(false);
 				window.location.reload();
@@ -64,14 +63,13 @@ export function ProcurementStaffProvider({ children }) {
 			});
 	};
 
-	// Delete Procurement Staff
-
-	const deleteProcurementStaff = async (id) => {
+	// Delete Supplier
+	const deleteSupplier = async (id) => {
 		try {
 			setIsLoading(true);
-			await ProcurementStaffAPI.deleteProcurementStaff(id);
-			setProcurementStaffs(procurementStaff.filter((procurementStaff) => procurementStaff._id !== id));
-			makeToast({ type: "success", message: "Procurement Staff deleted successfully" });
+			await SupplierAPI.deleteSupplier(id);
+			setSuppliers(supplier.filter((supplier) => supplier._id !== id));
+			makeToast({ type: "success", message: "Supplier deleted successfully" });
 			setIsLoading(false);
 		} catch (error) {
 			// eslint-disable-next-line no-console
@@ -79,27 +77,16 @@ export function ProcurementStaffProvider({ children }) {
 		}
 	};
 
-	useEffect(() => {
-		if (localStorage.getItem("uID")) {
-			ProcurementStaffAPI.getProcurementStaffDetails(localStorage.getItem("uID")).then((response) => {
-				setProcurementStaff(response.data);
-			});
-			// AdminAPI.getAllAdmins().then((response) => {
-			// 	setAdmins(response.data);
-			// });
-		}
-	}, [procurementStaffs]);
-
-	// Update Procurement Staff
-	const updateProcurementStaff = (values) => {
+	// Update Supplier
+	const updateSupplier = (values) => {
 		const uID = localStorage.getItem("uID");
 		setIsLoading(true);
-		ProcurementStaffAPI.updateProcurementStaff(uID, values)
+		SupplierAPI.updateSupplier(uID, values)
 			.then((response) => {
-				setProcurementStaff(response.data);
+				setSupplier(response.data);
 				setIsLoading(false);
 				makeToast({ type: "success", message: "Profile Updated Successfully" });
-				navigate("/procurement-staff");
+				navigate("/supplier");
 			})
 			.catch((err) => {
 				setMessage(err.response.data.details.message);
@@ -107,24 +94,35 @@ export function ProcurementStaffProvider({ children }) {
 			});
 	};
 
+	useEffect(() => {
+		if (localStorage.getItem("uID")) {
+			SupplierAPI.getSupplierDetails(localStorage.getItem("uID")).then((response) => {
+				setSupplier(response.data);
+			});
+			// AdminAPI.getAllAdmins().then((response) => {
+			// 	setAdmins(response.data);
+			// });
+		}
+	}, [suppliers]);
+
 	return (
-		<ProcurementStaffContext.Provider
+		<SupplierContext.Provider
 			value={{
-				isLoading,
 				isLoggedIn,
-				login,
-				procurementStaffs,
-				setProcurementStaffs,
-				procurementStaff,
-				setProcurementStaff,
+				isLoading,
+				supplierLogin,
+				supplier,
 				message,
-				deleteProcurementStaff,
-				updateProcurementStaff,
+				setSupplier,
+				suppliers,
+				setSuppliers,
+				deleteSupplier,
+				updateSupplier,
 			}}
 		>
 			{children}
-		</ProcurementStaffContext.Provider>
+		</SupplierContext.Provider>
 	);
 }
 
-export default ProcurementStaffContext;
+export default SupplierContext;
