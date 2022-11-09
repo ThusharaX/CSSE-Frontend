@@ -16,6 +16,18 @@ import SampleEdit from "./sample-edit";
 import SampleReport from "./sample-report";
 import Sample from "./sample";
 
+// Site Manager
+import SiteManagerLogin from "./sitemanager-login";
+import SiteManagerDashboard from "./sitemanager-dashboard";
+
+//Procurment Sfaff
+import ProcurementStaffLogin from "./procurementStaff-login";
+import ProcurementStaffDashboard from "./procurementStaff-dashboard";
+
+// Supplier
+import SupplierLogin from "./supplier-login";
+import SupplierDashboard from "./supplier-dashboard";
+
 export {
 	// Common
 	Home,
@@ -34,4 +46,16 @@ export {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	// Site Manager
+	SiteManagerLogin,
+	SiteManagerDashboard,
+
+	//Procurment Sfaff
+	ProcurementStaffLogin,
+	ProcurementStaffDashboard,
+
+	// Supplier
+	SupplierLogin,
+	SupplierDashboard,
 };

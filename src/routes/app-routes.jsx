@@ -27,6 +27,18 @@ import {
 	SampleEdit,
 	SampleReport,
 	Sample,
+
+	// Site Manager
+	SiteManagerLogin,
+	SiteManagerDashboard,
+
+	// Procurement Staff
+	ProcurementStaffLogin,
+	ProcurementStaffDashboard,
+
+	// Supplier
+	SupplierLogin,
+	SupplierDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -59,6 +71,41 @@ const AppRoutes = () => {
 						<Route exact path="/admin/edit-sample/:id" element={<SampleEdit />} />
 						<Route exact path="/admin/manage-samples" element={<AdminManageSamples />} />
 						<Route exact path="/admin/report" element={<SampleReport />} />
+					</Route>
+
+					{/* Site Manager*/}
+
+					{/* Check Login Status */}
+					<Route exact path="/site-manager/login" element={<CheckLoginStatus />}>
+						<Route exact path="/site-manager/login" element={<SiteManagerLogin />} />
+					</Route>
+
+					{/* Site Manager Private Routes */}
+					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
+						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
+					</Route>
+
+					{/* Procurement Staff*/}
+
+					{/* Check Login Status */}
+					<Route exact path="/procurement-staff/login" element={<CheckLoginStatus />}>
+						<Route exact path="/procurement-staff/login" element={<ProcurementStaffLogin />} />
+					</Route>
+
+					{/* Procurement Staff Private Routes */}
+					<Route exact path="/procurement-staff" element={<PrivateRoute permissionLevel="PROCUREMENT_STAFF" />}>
+						<Route exact path="/procurement-staff" element={<ProcurementStaffDashboard />} />
+					</Route>
+
+					{/* Supplier*/}
+					{/* Check Login Status */}
+					<Route exact path="/supplier/login" element={<CheckLoginStatus />}>
+						<Route exact path="/supplier/login" element={<SupplierLogin />} />
+					</Route>
+
+					{/* Supplier Private Routes */}
+					<Route exact path="/supplier" element={<PrivateRoute permissionLevel="MANAGER" />}>
+						<Route exact path="/supplier" element={<ProcurementStaffDashboard />} />
 					</Route>
 
 					{/* 404 */}

@@ -9,6 +9,16 @@ const PrivateRoute = ({ permissionLevel }) => {
 	} else {
 		if (permissionLevel === "ADMIN") {
 			return <Navigate to="/admin/login" />;
+		}
+
+		if (permissionLevel === "SITE_MANAGER") {
+			return <Navigate to="/site-manager/login" />;
+		}
+		if (permissionLevel === "PROCUREMENT_STAFF") {
+			return <Navigate to="/procurement-staff/login" />;
+		}
+		if (permissionLevel === "MANAGER") {
+			return <Navigate to="/supplier/login" />;
 		} else {
 			return <Navigate to="/" />;
 		}
