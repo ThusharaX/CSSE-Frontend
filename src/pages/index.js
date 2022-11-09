@@ -24,6 +24,10 @@ import SiteManagerDashboard from "./sitemanager-dashboard";
 import ProcurementStaffLogin from "./procurementStaff-login";
 import ProcurementStaffDashboard from "./procurementStaff-dashboard";
 
+// Supplier
+import SupplierLogin from "./supplier-login";
+import SupplierDashboard from "./supplier-dashboard";
+
 export {
 	// Common
 	Home,
@@ -50,4 +54,8 @@ export {
 	//Procurment Sfaff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+
+	// Supplier
+	SupplierLogin,
+	SupplierDashboard,
 };

@@ -12,6 +12,9 @@ const CheckLoginStatus = () => {
 	}
 	if (permissionLevel === "PROCUREMENT_STAFF") {
 		return <Navigate to="/procurement-staff" />;
+	}
+	if (permissionLevel === "MANAGER") {
+		return <Navigate to="/supplier" />;
 	} else {
 		return <Outlet />;
 	}

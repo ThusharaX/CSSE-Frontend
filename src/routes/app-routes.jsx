@@ -35,6 +35,10 @@ import {
 	// Procurement Staff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+
+	// Supplier
+	SupplierLogin,
+	SupplierDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -91,6 +95,17 @@ const AppRoutes = () => {
 					{/* Procurement Staff Private Routes */}
 					<Route exact path="/procurement-staff" element={<PrivateRoute permissionLevel="PROCUREMENT_STAFF" />}>
 						<Route exact path="/procurement-staff" element={<ProcurementStaffDashboard />} />
+					</Route>
+
+					{/* Supplier*/}
+					{/* Check Login Status */}
+					<Route exact path="/supplier/login" element={<CheckLoginStatus />}>
+						<Route exact path="/supplier/login" element={<SupplierLogin />} />
+					</Route>
+
+					{/* Supplier Private Routes */}
+					<Route exact path="/supplier" element={<PrivateRoute permissionLevel="MANAGER" />}>
+						<Route exact path="/supplier" element={<ProcurementStaffDashboard />} />
 					</Route>
 
 					{/* 404 */}
