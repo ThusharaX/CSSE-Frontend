@@ -93,7 +93,6 @@ const AppRoutes = () => {
 						<Route exact path="/procurement-staff" element={<ProcurementStaffDashboard />} />
 					</Route>
 
-
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
 				</Routes>
