@@ -36,6 +36,8 @@ import {
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
 
+	//
+	ProductCreate,
 	// Supplier
 	SupplierLogin,
 	SupplierDashboard,
@@ -97,6 +99,8 @@ const AppRoutes = () => {
 						<Route exact path="/procurement-staff" element={<ProcurementStaffDashboard />} />
 					</Route>
 
+					{/* Products Private Routes */}
+					<Route exact path="/procurement-staff/product-create" element={<ProductCreate />} />
 					{/* Supplier*/}
 					{/* Check Login Status */}
 					<Route exact path="/supplier/login" element={<CheckLoginStatus />}>

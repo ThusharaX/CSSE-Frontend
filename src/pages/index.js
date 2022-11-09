@@ -16,6 +16,11 @@ import SampleEdit from "./sample-edit";
 import SampleReport from "./sample-report";
 import Sample from "./sample";
 
+//supplier
+
+import SupplierDashboard from "./supplier-dashboard";
+import SupplierLogin from "./supplier-login";
+
 // Site Manager
 import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
@@ -24,9 +29,9 @@ import SiteManagerDashboard from "./sitemanager-dashboard";
 import ProcurementStaffLogin from "./procurementStaff-login";
 import ProcurementStaffDashboard from "./procurementStaff-dashboard";
 
-// Supplier
-import SupplierLogin from "./supplier-login";
-import SupplierDashboard from "./supplier-dashboard";
+//product
+
+import ProductCreate from "./product-create";
 
 export {
 	// Common
@@ -47,6 +52,10 @@ export {
 	SampleReport,
 	Sample,
 
+	//supplier
+	SupplierDashboard,
+	SupplierLogin,
+
 	// Site Manager
 	SiteManagerLogin,
 	SiteManagerDashboard,
@@ -55,7 +64,6 @@ export {
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
 
-	// Supplier
-	SupplierLogin,
-	SupplierDashboard,
+	//product
+	ProductCreate,
 };
