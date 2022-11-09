@@ -31,6 +31,10 @@ import {
 	// Site Manager
 	SiteManagerLogin,
 	SiteManagerDashboard,
+
+	// Procurement Staff
+	ProcurementStaffLogin,
+	ProcurementStaffDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -76,6 +80,10 @@ const AppRoutes = () => {
 					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
 						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
 					</Route>
+
+					{/* Procurement Staff*/}
+					<Route path="/procurement-staff/login" element={<ProcurementStaffLogin />} />
+					<Route path="/procurement-staff" element={<ProcurementStaffDashboard />} />
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
