@@ -50,7 +50,7 @@ export function ProcurementStaffProvider({ children }) {
 				localStorage.setItem("email", response.data.email);
 				localStorage.setItem("authToken", response.data.token);
 				localStorage.setItem("permissionLevel", response.data.permissionLevel);
-				navigate("/");
+				navigate("/procurement-staff");
 				setIsLoggedIn(true);
 				setIsLoading(false);
 				window.location.reload();

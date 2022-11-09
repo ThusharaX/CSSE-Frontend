@@ -82,8 +82,16 @@ const AppRoutes = () => {
 					</Route>
 
 					{/* Procurement Staff*/}
-					<Route path="/procurement-staff/login" element={<ProcurementStaffLogin />} />
-					<Route path="/procurement-staff" element={<ProcurementStaffDashboard />} />
+
+					{/* Check Login Status */}
+					<Route exact path="/procurement-staff/login" element={<CheckLoginStatus />}>
+						<Route exact path="/procurement-staff/login" element={<ProcurementStaffLogin />} />
+					</Route>
+
+					{/* Procurement Staff Private Routes */}
+					<Route exact path="/procurement-staff" element={<PrivateRoute permissionLevel="PROCUREMENT_STAFF" />}>
+						<Route exact path="/procurement-staff" element={<ProcurementStaffDashboard />} />
+					</Route>
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
