@@ -22,7 +22,7 @@ import SiteManagerDashboard from "./sitemanager-dashboard";
 
 //Procurment Sfaff
 import ProcurementStaffLogin from "./procurementStaff-login";
-import ProcurementStaffDashboard from "./procurementStaff-dashboard";
+
 
 export {
 	// Common
@@ -49,5 +49,5 @@ export {
 
 	//Procurment Sfaff
 	ProcurementStaffLogin,
-	ProcurementStaffDashboard,
+	
 };
