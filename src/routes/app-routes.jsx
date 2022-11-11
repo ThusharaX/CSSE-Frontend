@@ -43,6 +43,9 @@ import {
 	// Supplier
 	SupplierLogin,
 	SupplierDashboard,
+
+	//Pending Orders
+	PendingOrdersPS,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -114,11 +117,16 @@ const AppRoutes = () => {
 						<Route exact path="/supplier" element={<SupplierDashboard />} />
 					</Route>
 
+
+					{/* Pending Orders Private Routes */}
+					<Route exact path="/pending-orders" element={<PendingOrdersPS />} />
+
 					{/* Site Manager Register */}
 					<Route path="/site-manager-register" element={<SiteManagerRegister />} />
 
 					{/* Procurement Staff Register */}
 					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
+
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />

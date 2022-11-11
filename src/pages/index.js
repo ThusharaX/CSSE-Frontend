@@ -35,6 +35,10 @@ import ProcurementStaffRegister from "./procurementStaff-register";
 
 import ProductCreate from "./product-create";
 
+//pendingOrders
+
+import PendingOrdersPS from "./pending-orders-ps";
+
 export {
 	// Common
 	Home,
@@ -70,4 +74,7 @@ export {
 
 	//product
 	ProductCreate,
+
+	//pending Orders
+	PendingOrdersPS,
 };

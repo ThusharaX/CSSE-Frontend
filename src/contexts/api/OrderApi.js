@@ -21,7 +21,7 @@ class OrderAPI {
 	}
 
 	// Edit an Order
-	static editOrder(Order_id, updatedOrder) {
+	static editOrderStatus(Order_id, updatedOrder) {
 		return axios.put(`${BASE_URL}/order/${Order_id}`, updatedOrder, requestConfigJson);
 	}
 
