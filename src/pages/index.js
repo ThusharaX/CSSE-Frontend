@@ -24,10 +24,12 @@ import SupplierLogin from "./supplier-login";
 // Site Manager
 import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
+import SiteManagerRegister from "./sitemanager-register";
 
 //Procurment Sfaff
 import ProcurementStaffLogin from "./procurementStaff-login";
 import ProcurementStaffDashboard from "./procurementStaff-dashboard";
+import ProcurementStaffRegister from "./procurementStaff-register";
 
 //product
 
@@ -59,10 +61,12 @@ export {
 	// Site Manager
 	SiteManagerLogin,
 	SiteManagerDashboard,
+	SiteManagerRegister,
 
 	//Procurment Sfaff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+	ProcurementStaffRegister,
 
 	//product
 	ProductCreate,

@@ -31,10 +31,12 @@ import {
 	// Site Manager
 	SiteManagerLogin,
 	SiteManagerDashboard,
+	SiteManagerRegister,
 
 	// Procurement Staff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+	ProcurementStaffRegister,
 
 	//
 	ProductCreate,
@@ -111,6 +113,12 @@ const AppRoutes = () => {
 					<Route exact path="/supplier" element={<PrivateRoute permissionLevel="MANAGER" />}>
 						<Route exact path="/supplier" element={<SupplierDashboard />} />
 					</Route>
+
+					{/* Site Manager Register */}
+					<Route path="/site-manager-register" element={<SiteManagerRegister />} />
+
+					{/* Procurement Staff Register */}
+					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
