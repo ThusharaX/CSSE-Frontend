@@ -150,7 +150,11 @@ const SiteManagerPendingOrders = () => {
 																	<option value="RECEIVED">RECEIVED</option>
 																</select>
 																<div>
-																	<button className="bg-green-500 p-1 rounded-sm text-white" type="submit" value="Submit">
+																	<button
+																		className="bg-green-500 p-1 rounded-sm text-white"
+																		type="submit"
+																		value="Submit"
+																	>
 																		change Status
 																	</button>
 																</div>
@@ -159,7 +163,10 @@ const SiteManagerPendingOrders = () => {
 													) : (
 														<div>
 															<div>{order.status}</div>
-															<button className="bg-red-500 p-1 rounded-sm text-white" onClick={() => setStatus(order._id)}>
+															<button
+																className="bg-red-500 p-1 rounded-sm text-white"
+																onClick={() => setStatus(order._id)}
+															>
 																change
 															</button>
 														</div>

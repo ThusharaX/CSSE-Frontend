@@ -47,8 +47,7 @@ const Header = () => {
 							<ul className="flex p-1">
 								{permissionLevel === "SITE_MANAGER" ? (
 									<li className="mr-6 bg-white hover:bg-gray-300 px-5 rounded-lg ">
-										<Link to="/site-manager"
-											className="text-base font-bold  text-primary-blue">
+										<Link to="/site-manager" className="text-base font-bold  text-primary-blue">
 											Dashboard
 										</Link>
 									</li>
