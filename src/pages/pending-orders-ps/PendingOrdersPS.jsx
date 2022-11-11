@@ -140,20 +140,18 @@ const PendingOrders = () => {
 																	<option value="SEND_APPROVE">send approve</option>
 																</select>
 																<div>
-																	<button className="color-red" type="submit" value="Submit">
+																	<button className="bg-green-500" type="submit" value="Submit">
 																		change Status
 																	</button>
 																</div>
 															</form>
 
-															<button className="color-red" onClick={refresh}>
-																save
-															</button>
+
 														</div>
 													) : (
 														<div>
 															<div>{order.status}</div>
-															<button className="color-red" onClick={() => setStatus(order._id)}>
+															<button className="bg-red-500" onClick={() => setStatus(order._id)}>
 																change
 															</button>
 														</div>
