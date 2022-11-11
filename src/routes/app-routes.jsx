@@ -31,6 +31,7 @@ import {
 	// Site Manager
 	SiteManagerLogin,
 	SiteManagerDashboard,
+	SiteManagerRegister,
 
 	// Procurement Staff
 	ProcurementStaffLogin,
@@ -111,6 +112,9 @@ const AppRoutes = () => {
 					<Route exact path="/supplier" element={<PrivateRoute permissionLevel="MANAGER" />}>
 						<Route exact path="/supplier" element={<ProcurementStaffDashboard />} />
 					</Route>
+
+					{/* Site Manager Register */}
+					<Route path="/site-manager-register" element={<SiteManagerRegister />} />
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />

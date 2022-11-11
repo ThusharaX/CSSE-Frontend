@@ -97,7 +97,7 @@ export function SiteManagerProvider({ children }) {
 
 	useEffect(() => {
 		if (localStorage.getItem("uID")) {
-			SiteManagerAPI.getAdminDetails(localStorage.getItem("uID")).then((response) => {
+			SiteManagerAPI.getSiteManagerDetails(localStorage.getItem("uID")).then((response) => {
 				setSiteManager(response.data);
 			});
 			// AdminAPI.getAllAdmins().then((response) => {
@@ -105,6 +105,28 @@ export function SiteManagerProvider({ children }) {
 			// });
 		}
 	}, [siteManagers]);
+
+	// Site Manager Register
+	const registerSiteManager = (values) => {
+		// Validate
+
+		setIsLoading(true);
+		SiteManagerAPI.registerSiteManager(values)
+			.then((response) => {
+				localStorage.setItem("uID", response.data._id);
+				localStorage.setItem("email", response.data.email);
+				localStorage.setItem("authToken", response.data.token);
+				localStorage.setItem("permissionLevel", response.data.permissionLevel);
+				makeToast({ type: "success", message: "Register Successful" });
+				setIsLoggedIn(true);
+				setIsLoading(false);
+			})
+			.catch((err) => {
+				setMessage(err.response.data.details.message);
+				setIsLoading(false);
+				makeToast({ type: "error", message: "Invalid Email or Password" });
+			});
+	};
 
 	return (
 		<SiteManagerContext.Provider
@@ -119,6 +141,7 @@ export function SiteManagerProvider({ children }) {
 				setSiteManager,
 				updateSiteManager,
 				message,
+				registerSiteManager,
 			}}
 		>
 			{children}
