@@ -12,13 +12,10 @@ const PendingOrders = () => {
 	const [status, setStatus] = useState(null);
 	const [orderStatus, setOrderStatus] = useState("");
 
-    const refresh=()=>{
-
-        const navigate = useNavigate();
-        navigate("/pending-orders");
-
-
-    }
+	const refresh = () => {
+		const navigate = useNavigate();
+		navigate("/pending-orders");
+	};
 
 	/*const oneProduct = (id) => {
 		const productDetails = getOneProduct(id);
