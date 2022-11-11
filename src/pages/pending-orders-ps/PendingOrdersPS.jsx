@@ -145,8 +145,6 @@ const PendingOrders = () => {
 																	</button>
 																</div>
 															</form>
-
-
 														</div>
 													) : (
 														<div>
