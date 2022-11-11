@@ -45,10 +45,11 @@ const Header = () => {
 
 							{/* Admin */}
 							<ul className="flex p-1">
-								{permissionLevel === "ADMIN" ? (
+								{permissionLevel === "SITE_MANAGER" ? (
 									<li className="mr-6 bg-white hover:bg-gray-300 px-5 rounded-lg ">
-										<Link to="/admin" className="text-base font-bold  text-primary-blue">
-											Admin Dashboard
+										<Link to="/site-manager"
+											className="text-base font-bold  text-primary-blue">
+											Dashboard
 										</Link>
 									</li>
 								) : (
@@ -56,11 +57,11 @@ const Header = () => {
 								)}
 
 								{/* Sample */}
-								<li className="mr-6">
+								{/* <li className="mr-6">
 									<Link to="/sample" className="text-base font-medium text-white hover:text-gray-300">
 										Samples
 									</Link>
-								</li>
+								</li> */}
 
 								{localStorage.getItem("authToken") ? (
 									<li className="mr-6 bg-white hover:bg-gray-300 px-5 rounded-lg " onClick={logout}>

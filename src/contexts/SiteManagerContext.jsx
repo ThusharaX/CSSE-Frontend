@@ -21,6 +21,7 @@ export function SiteManagerProvider({ children }) {
 		password: "",
 		contact: "",
 		nic: "",
+		permissionLevel: "",
 	});
 
 	// Get all Site managers
@@ -99,6 +100,8 @@ export function SiteManagerProvider({ children }) {
 		if (localStorage.getItem("uID")) {
 			SiteManagerAPI.getSiteManagerDetails(localStorage.getItem("uID")).then((response) => {
 				setSiteManager(response.data);
+				// eslint-disable-next-line no-console
+				console.log(response.data);
 			});
 			// AdminAPI.getAllAdmins().then((response) => {
 			// 	setAdmins(response.data);
