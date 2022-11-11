@@ -10,7 +10,7 @@ const AdminDashboard = () => {
 			{/* <h1 className="mt-5 text-4xl text-center">Admin Dashboard</h1> */}
 
 			{/* Logout button */}
-			<div className="flex justify-end m-5">
+			{/* <div className="flex justify-end m-5">
 				<div className="w-1/7">
 					<button
 						className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 						Logout
 					</button>
 				</div>
-			</div>
+			</div> */}
 			<div className="flex justify-center flex-col sm:flex-row m-5">
 				<div className="bg-white shadow-lg text-center flex justify-center flex-col rounded-3xl p-10 space-y-5 sm:w-1/2 sm:m-10">
 					{/* <div>DP</div> */}
