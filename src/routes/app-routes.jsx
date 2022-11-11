@@ -109,7 +109,7 @@ const AppRoutes = () => {
 
 					{/* Supplier Private Routes */}
 					<Route exact path="/supplier" element={<PrivateRoute permissionLevel="MANAGER" />}>
-						<Route exact path="/supplier" element={<ProcurementStaffDashboard />} />
+						<Route exact path="/supplier" element={<SupplierDashboard />} />
 					</Route>
 
 					{/* 404 */}

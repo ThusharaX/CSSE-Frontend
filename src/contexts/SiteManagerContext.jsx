@@ -97,7 +97,7 @@ export function SiteManagerProvider({ children }) {
 
 	useEffect(() => {
 		if (localStorage.getItem("uID")) {
-			SiteManagerAPI.getAdminDetails(localStorage.getItem("uID")).then((response) => {
+			SiteManagerAPI.getSiteManagerDetails(localStorage.getItem("uID")).then((response) => {
 				setSiteManager(response.data);
 			});
 			// AdminAPI.getAllAdmins().then((response) => {
