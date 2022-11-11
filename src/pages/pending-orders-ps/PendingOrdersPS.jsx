@@ -26,6 +26,7 @@ const PendingOrders = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
+		// eslint-disable-next-line no-console
 		console.log("id=" + status);
 
 		const newStatus = {
@@ -34,6 +35,9 @@ const PendingOrders = () => {
 		};
 
 		editOrderStatus(newStatus);
+
+		// Refresh the page
+		window.location.reload();
 	};
 
 	return (
