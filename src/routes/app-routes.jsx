@@ -36,6 +36,7 @@ import {
 	// Procurement Staff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+	ProcurementStaffRegister,
 
 	//
 	ProductCreate,
@@ -115,6 +116,9 @@ const AppRoutes = () => {
 
 					{/* Site Manager Register */}
 					<Route path="/site-manager-register" element={<SiteManagerRegister />} />
+
+					{/* Procurement Staff Register */}
+					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />

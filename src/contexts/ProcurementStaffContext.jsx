@@ -107,6 +107,28 @@ export function ProcurementStaffProvider({ children }) {
 			});
 	};
 
+	// Prcourement Staff Register
+	const register = (values) => {
+		// Validate
+
+		setIsLoading(true);
+		ProcurementStaffAPI.registerProcurementStaff(values)
+			.then((response) => {
+				localStorage.setItem("uID", response.data._id);
+				localStorage.setItem("email", response.data.email);
+				localStorage.setItem("authToken", response.data.token);
+				localStorage.setItem("permissionLevel", response.data.permissionLevel);
+				makeToast({ type: "success", message: "Register Successful" });
+				setIsLoggedIn(true);
+				setIsLoading(false);
+			})
+			.catch((err) => {
+				setMessage(err.response.data.details.message);
+				setIsLoading(false);
+				makeToast({ type: "error", message: "Invalid Email or Password" });
+			});
+	};
+
 	return (
 		<ProcurementStaffContext.Provider
 			value={{
@@ -120,6 +142,7 @@ export function ProcurementStaffProvider({ children }) {
 				message,
 				deleteProcurementStaff,
 				updateProcurementStaff,
+				register,
 			}}
 		>
 			{children}

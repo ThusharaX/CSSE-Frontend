@@ -29,6 +29,7 @@ import SiteManagerRegister from "./sitemanager-register";
 //Procurment Sfaff
 import ProcurementStaffLogin from "./procurementStaff-login";
 import ProcurementStaffDashboard from "./procurementStaff-dashboard";
+import ProcurementStaffRegister from "./procurementStaff-register";
 
 //product
 
@@ -65,6 +66,7 @@ export {
 	//Procurment Sfaff
 	ProcurementStaffLogin,
 	ProcurementStaffDashboard,
+	ProcurementStaffRegister,
 
 	//product
 	ProductCreate,
