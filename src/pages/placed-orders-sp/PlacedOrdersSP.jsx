@@ -43,7 +43,7 @@ const PlacedOrdersSP = () => {
 
 	return (
 		<>
-			<h1 className="mt-5 text-4xl text-center">Pending Orders</h1>
+			<h1 className="mt-5 text-4xl text-center">Placed Orders</h1>
 
 			{/* Pending orders Table */}
 			<div className="flex flex-col mt-5 mx-5">
@@ -149,7 +149,7 @@ const PlacedOrdersSP = () => {
 																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
 																	<option value="ACCEPT">ACCEPT</option>
-																	<option value="REJECT">RECEIVED</option>
+																	<option value="REJECT">REJECT</option>
 																</select>
 																<div>
 																	<button
