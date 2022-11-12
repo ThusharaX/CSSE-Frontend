@@ -41,6 +41,14 @@ import ProductCreate from "./product-create";
 
 import PendingOrdersPS from "./pending-orders-ps";
 
+//placed orders
+
+import PlacedOrdersSP from "./placed-orders-sp";
+
+//Accepted Orders
+
+import AcceptedOrdersSP from "./accepted-orders-SP";
+
 export {
 	// Common
 	Home,
@@ -81,4 +89,11 @@ export {
 
 	//pending Orders
 	PendingOrdersPS,
+
+	//placed
+	PlacedOrdersSP,
+
+	//Accepted
+
+	AcceptedOrdersSP
 };
