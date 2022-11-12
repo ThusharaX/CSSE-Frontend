@@ -49,6 +49,10 @@ import PlacedOrdersSP from "./placed-orders-sp";
 
 import AcceptedOrdersSP from "./accepted-orders-SP";
 
+import ManagerLogin from "./manager-login";
+import ManagerDashboard from "./manager-dashboard";
+import ManagerFurtherApproval from "./manager-futher-approval";
+import ManagerRecivedOrder from "./manager-recived-order";
 export {
 	// Common
 	Home,
@@ -95,4 +99,9 @@ export {
 
 	//Accepted
 	AcceptedOrdersSP,
+	// Manager
+	ManagerLogin,
+	ManagerDashboard,
+	ManagerFurtherApproval,
+	ManagerRecivedOrder,
 };

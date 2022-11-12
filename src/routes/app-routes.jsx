@@ -54,6 +54,13 @@ import {
 
 	//Accepted Orders
 	AcceptedOrdersSP,
+
+	// Manager
+	ManagerLogin,
+	ManagerDashboard,
+	ManagerFurtherApproval,
+	ManagerRecivedOrder,
+  
 } from "../pages";
 
 const AppRoutes = () => {
@@ -141,6 +148,17 @@ const AppRoutes = () => {
 
 					{/* Placed Orders routes */}
 					<Route path="/accepted-orders" element={<AcceptedOrdersSP />} />
+					{/* Check Login Status */}
+					<Route exact path="/manager/login" element={<CheckLoginStatus />}>
+						<Route exact path="/manager/login" element={<ManagerLogin />} />
+					</Route>
+
+					{/* Manager private Routes*/}
+					<Route exact path="/manager" element={<PrivateRoute permissionLevel="MANAGER" />}>
+						<Route exact path="/manager" element={<ManagerDashboard />} />
+						<Route exact path="/manager/further-approval" element={<ManagerFurtherApproval />} />
+						<Route exact path="/manager/recevied-order" element={<ManagerRecivedOrder />} />
+					</Route>
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
