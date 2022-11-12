@@ -52,6 +52,8 @@ import {
 	// Manager
 	ManagerLogin,
 	ManagerDashboard,
+	ManagerFurtherApproval,
+	ManagerRecivedOrder,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -142,6 +144,8 @@ const AppRoutes = () => {
 					{/* Manager private Routes*/}
 					<Route exact path="/manager" element={<PrivateRoute permissionLevel="MANAGER" />}>
 						<Route exact path="/manager" element={<ManagerDashboard />} />
+						<Route exact path="/manager/further-approval" element={<ManagerFurtherApproval />} />
+						<Route exact path="/manager/recevied-order" element={<ManagerRecivedOrder />} />
 					</Route>
 
 					{/* 404 */}
