@@ -146,7 +146,7 @@ const ManagerFurtherApproval = () => {
 																{/* eslint-disable-next-line no-console */}
 																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
-																	<option value="ACCEPT">ACCEPT</option>
+																	<option value="PLACED">PLACED</option>
 																	<option value="REJECT">REJECT</option>
 																</select>
 																<div>
