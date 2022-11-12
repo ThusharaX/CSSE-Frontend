@@ -61,7 +61,8 @@ import {
 	ManagerDashboard,
 	ManagerFurtherApproval,
 	ManagerRecivedOrder,
-  
+	ManagerRejectOrder,
+
 } from "../pages";
 
 const AppRoutes = () => {
@@ -160,6 +161,7 @@ const AppRoutes = () => {
 						<Route exact path="/manager" element={<ManagerDashboard />} />
 						<Route exact path="/manager/further-approval" element={<ManagerFurtherApproval />} />
 						<Route exact path="/manager/recevied-order" element={<ManagerRecivedOrder />} />
+						<Route exact path="/manager/reject-order" element={<ManagerRejectOrder />} />
 					</Route>
 
 					{/* 404 */}

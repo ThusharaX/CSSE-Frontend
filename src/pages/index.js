@@ -54,6 +54,7 @@ import ManagerLogin from "./manager-login";
 import ManagerDashboard from "./manager-dashboard";
 import ManagerFurtherApproval from "./manager-futher-approval";
 import ManagerRecivedOrder from "./manager-recived-order";
+import ManagerRejectOrder from "./manager-reject-order";
 export {
 	// Common
 	Home,
@@ -106,4 +107,5 @@ export {
 	ManagerDashboard,
 	ManagerFurtherApproval,
 	ManagerRecivedOrder,
+	ManagerRejectOrder,
 };
