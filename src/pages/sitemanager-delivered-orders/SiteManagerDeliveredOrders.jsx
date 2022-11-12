@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 //import ProductContext from "../../contexts/productContext";
 import makeToast from "../../components/toast";
 
-const SiteManagerRecievedOrders = () => {
+const SiteManagerDeliveredOrders = () => {
 	//const { getOneProduct } = useContext(ProductContext);
 	const { editOrderStatus, getOneOrder, orders, setOrder } = useContext(OrderContext);
 	const [status, setStatus] = useState(null);
@@ -41,7 +41,8 @@ const SiteManagerRecievedOrders = () => {
 
 	return (
 		<>
-			<h1 className="mt-5 text-4xl text-center">Received Orders</h1>
+			{/* <h1 className="mt-5 text-4xl text-center">Received Orders</h1> */}
+			<h1 className="mt-5 text-4xl text-center">Delivered Orders</h1>
 
 			{/* Pending orders Table */}
 			<div className="flex flex-col mt-5 mx-5">
@@ -110,7 +111,7 @@ const SiteManagerRecievedOrders = () => {
 								</thead>
 
 								{orders
-									.filter((elem) => elem.status == "RECEIVED")
+									.filter((elem) => elem.status == "DELIVERED")
 									.map((order) => (
 										<tbody className="text-sm divide-y divide-gray-100" key={order._id}>
 											<tr>
@@ -147,7 +148,7 @@ const SiteManagerRecievedOrders = () => {
 																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
 																	<option value={order.status}>{order.status}</option>
-																	<option value="PENDING">PENDING</option>
+																	<option value="RECIEVED">RECIEVED</option>
 																</select>
 																<div>
 																	<button
@@ -184,4 +185,4 @@ const SiteManagerRecievedOrders = () => {
 	);
 };
 
-export default SiteManagerRecievedOrders;
+export default SiteManagerDeliveredOrders;

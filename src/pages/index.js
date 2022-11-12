@@ -26,7 +26,8 @@ import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
 import SiteManagerRegister from "./sitemanager-register";
 import SiteManagerPendingOrders from "./sitemanager-pending-orders";
-import SiteManagerRecievedOrders from "./sitemanager-recieved-orders";
+import SiteManagerDeliveredOrders from "./sitemanager-delivered-orders";
+import SiteManagerReceivedOrders from "./sitemanager-received-orders";
 
 //Procurment Sfaff
 import ProcurementStaffLogin from "./procurementStaff-login";
@@ -73,7 +74,8 @@ export {
 	SiteManagerDashboard,
 	SiteManagerRegister,
 	SiteManagerPendingOrders,
-	SiteManagerRecievedOrders,
+	SiteManagerDeliveredOrders,
+	SiteManagerReceivedOrders,
 
 	//Procurment Sfaff
 	ProcurementStaffLogin,

@@ -1,5 +1,5 @@
 import React from "react";
-import SiteManagerRecievedOrders from "./SiteManagerRecievedOrders";
+import SiteManagerDeliveredOrders from "./SiteManagerDeliveredOrders";
 
 // SampleProvider
 import { ProductProvider } from "../../contexts/productContext";
@@ -9,7 +9,7 @@ const index = () => {
 	return (
 		<>
 			<OrderProvider>
-				<SiteManagerRecievedOrders />
+				<SiteManagerDeliveredOrders />
 			</OrderProvider>
 		</>
 	);
