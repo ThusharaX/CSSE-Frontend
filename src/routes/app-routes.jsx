@@ -62,7 +62,6 @@ import {
 	ManagerFurtherApproval,
 	ManagerRecivedOrder,
 	ManagerRejectOrder,
-
 } from "../pages";
 
 const AppRoutes = () => {
