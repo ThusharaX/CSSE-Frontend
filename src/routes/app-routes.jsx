@@ -33,7 +33,8 @@ import {
 	SiteManagerDashboard,
 	SiteManagerRegister,
 	SiteManagerPendingOrders,
-	SiteManagerRecievedOrders,
+	SiteManagerDeliveredOrders,
+	SiteManagerReceivedOrders,
 
 	// Procurement Staff
 	ProcurementStaffLogin,
@@ -97,7 +98,8 @@ const AppRoutes = () => {
 					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
 						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
 						<Route exact path="/site-manager/pending-orders" element={<SiteManagerPendingOrders />} />
-						<Route exact path="/site-manager/recieved-orders" element={<SiteManagerRecievedOrders />} />
+						<Route exact path="/site-manager/delivered-orders" element={<SiteManagerDeliveredOrders />} />
+						<Route exact path="/site-manager/recieved-orders" element={<SiteManagerReceivedOrders />} />
 					</Route>
 
 					{/* Procurement Staff*/}

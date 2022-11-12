@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 //import ProductContext from "../../contexts/productContext";
 import makeToast from "../../components/toast";
 
-const SiteManagerRecievedOrders = () => {
+const SiteManagerReceivedOrders = () => {
 	//const { getOneProduct } = useContext(ProductContext);
 	const { editOrderStatus, getOneOrder, orders, setOrder } = useContext(OrderContext);
 	const [status, setStatus] = useState(null);
@@ -140,14 +140,15 @@ const SiteManagerRecievedOrders = () => {
 													<div className="text-left font-semibold">{order.productName}</div>
 												</td>
 												<td className="p-2 whitespace-nowrap">
+													<div className="text-center font-semibold bg-orange-500 rounded-sm text-white">{order.status}</div>
+												</td>
+												{/* <td className="p-2 whitespace-nowrap">
 													{status === order._id ? (
 														<div>
 															<form onSubmit={handleSubmit}>
-																{/* eslint-disable-next-line no-console */}
-																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
 																	<option value={order.status}>{order.status}</option>
-																	<option value="PENDING">PENDING</option>
+																	<option value="RECEIVED">RECEIVED</option>
 																</select>
 																<div>
 																	<button
@@ -171,7 +172,7 @@ const SiteManagerRecievedOrders = () => {
 															</button>
 														</div>
 													)}
-												</td>
+												</td> */}
 											</tr>
 										</tbody>
 									))}
@@ -184,4 +185,4 @@ const SiteManagerRecievedOrders = () => {
 	);
 };
 
-export default SiteManagerRecievedOrders;
+export default SiteManagerReceivedOrders;

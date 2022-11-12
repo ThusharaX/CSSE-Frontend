@@ -39,22 +39,22 @@ const SiteManagerDashboard = () => {
 					</Link>
 
 					{/* Card 1 */}
-					<Link to="/site-manager/recieved-orders">
+					<Link to="/site-manager/delivered-orders">
 						<div className="m-5 p-5 sm:p-10 md:p-20 bg-white drop-shadow-lg bg-no-repeat bg-left-top bg-cover md:bg-[url('../allSamples.png')] rounded-3xl">
 							<h1 className="text-primary-blue md:text-white md:bg-black md:bg-opacity-60 md:p-2 rounded-xl font-bold text-lg md:text-3xl hover:underline">
-								Recieved Orders
+								Delivered Orders
 							</h1>
 						</div>
 					</Link>
 
 					{/* Card 1 */}
-					{/* <Link to="/admin/report">
+					<Link to="/site-manager/recieved-orders">
 						<div className="m-5 p-5 sm:p-10 md:p-20 bg-white drop-shadow-lg bg-no-repeat bg-left-top bg-cover md:bg-[url('../sampleReport.png')] rounded-3xl">
 							<h1 className="text-primary-blue md:text-white md:bg-black md:bg-opacity-60 md:p-2 rounded-xl font-bold text-lg md:text-3xl hover:underline">
-								Manage Supplier
+								Recieved Orders
 							</h1>
 						</div>
-					</Link> */}
+					</Link>
 				</div>
 			</div>
 		</>

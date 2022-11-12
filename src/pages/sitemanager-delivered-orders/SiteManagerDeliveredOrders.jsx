@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 //import ProductContext from "../../contexts/productContext";
 import makeToast from "../../components/toast";
 
-const SiteManagerPendingOrders = () => {
+const SiteManagerDeliveredOrders = () => {
 	//const { getOneProduct } = useContext(ProductContext);
 	const { editOrderStatus, getOneOrder, orders, setOrder } = useContext(OrderContext);
 	const [status, setStatus] = useState(null);
@@ -41,7 +41,8 @@ const SiteManagerPendingOrders = () => {
 
 	return (
 		<>
-			<h1 className="mt-5 text-4xl text-center">Pending Orders</h1>
+			{/* <h1 className="mt-5 text-4xl text-center">Received Orders</h1> */}
+			<h1 className="mt-5 text-4xl text-center">Delivered Orders</h1>
 
 			{/* Pending orders Table */}
 			<div className="flex flex-col mt-5 mx-5">
@@ -110,7 +111,7 @@ const SiteManagerPendingOrders = () => {
 								</thead>
 
 								{orders
-									.filter((elem) => elem.status == "PENDING")
+									.filter((elem) => elem.status == "DELIVERED")
 									.map((order) => (
 										<tbody className="text-sm divide-y divide-gray-100" key={order._id}>
 											<tr>
@@ -140,15 +141,14 @@ const SiteManagerPendingOrders = () => {
 													<div className="text-left font-semibold">{order.productName}</div>
 												</td>
 												<td className="p-2 whitespace-nowrap">
-													<div className="text-center font-semibold bg-green-500 rounded-sm text-white">{order.status}</div>
-												</td>
-												{/* <td className="p-2 whitespace-nowrap">
 													{status === order._id ? (
 														<div>
 															<form onSubmit={handleSubmit}>
+																{/* eslint-disable-next-line no-console */}
+																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
 																	<option value={order.status}>{order.status}</option>
-																	<option value="RECEIVED">RECEIVED</option>
+																	<option value="RECIEVED">RECIEVED</option>
 																</select>
 																<div>
 																	<button
@@ -172,7 +172,7 @@ const SiteManagerPendingOrders = () => {
 															</button>
 														</div>
 													)}
-												</td> */}
+												</td>
 											</tr>
 										</tbody>
 									))}
@@ -185,4 +185,4 @@ const SiteManagerPendingOrders = () => {
 	);
 };
 
-export default SiteManagerPendingOrders;
+export default SiteManagerDeliveredOrders;
