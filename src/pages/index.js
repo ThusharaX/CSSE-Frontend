@@ -94,6 +94,5 @@ export {
 	PlacedOrdersSP,
 
 	//Accepted
-
-	AcceptedOrdersSP
+	AcceptedOrdersSP,
 };

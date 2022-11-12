@@ -11,8 +11,7 @@ const AcceptedOrdersSP = () => {
 	const [status, setStatus] = useState(null);
 	const [orderStatus, setOrderStatus] = useState("");
 
-    const id = localStorage.getItem("uID");
-
+	const id = localStorage.getItem("uID");
 
 	const refresh = () => {
 		const navigate = useNavigate();
@@ -113,7 +112,7 @@ const AcceptedOrdersSP = () => {
 								</thead>
 
 								{orders
-									.filter((elem) => elem.status == "ACCEPT" && elem.supplierID==id)
+									.filter((elem) => elem.status == "ACCEPT" && elem.supplierID == id)
 									.map((order) => (
 										<tbody className="text-sm divide-y divide-gray-100" key={order._id}>
 											<tr>
@@ -149,8 +148,8 @@ const AcceptedOrdersSP = () => {
 																{/* eslint-disable-next-line no-console */}
 																{console.log(status)}
 																<select name="status" id="status" defaultValue={order.status}>
-                                                                <option value={order.status}>{order.status}</option>
-																<option value="DELIVERED">DELIVER</option>
+																	<option value={order.status}>{order.status}</option>
+																	<option value="DELIVERED">DELIVER</option>
 																</select>
 																<div>
 																	<button

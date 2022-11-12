@@ -11,8 +11,7 @@ const PlacedOrdersSP = () => {
 	const [status, setStatus] = useState(null);
 	const [orderStatus, setOrderStatus] = useState("");
 
-    const id = localStorage.getItem("uID");
-
+	const id = localStorage.getItem("uID");
 
 	const refresh = () => {
 		const navigate = useNavigate();
@@ -113,7 +112,7 @@ const PlacedOrdersSP = () => {
 								</thead>
 
 								{orders
-									.filter((elem) => elem.status == "PLACED" && elem.supplierID==id)
+									.filter((elem) => elem.status == "PLACED" && elem.supplierID == id)
 									.map((order) => (
 										<tbody className="text-sm divide-y divide-gray-100" key={order._id}>
 											<tr>

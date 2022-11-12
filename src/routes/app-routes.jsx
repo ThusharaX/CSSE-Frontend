@@ -53,9 +53,7 @@ import {
 	PlacedOrdersSP,
 
 	//Accepted Orders
-	AcceptedOrdersSP
-
-
+	AcceptedOrdersSP,
 } from "../pages";
 
 const AppRoutes = () => {

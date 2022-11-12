@@ -6,7 +6,7 @@ const SupplierDashboard = () => {
 	const { supplier } = useContext(SupplierContext);
 	// eslint-disable-next-line no-console
 
-	const id= localStorage.getItem("uID");
+	const id = localStorage.getItem("uID");
 
 	return (
 		<>
