@@ -26,7 +26,8 @@ import SiteManagerLogin from "./sitemanager-login";
 import SiteManagerDashboard from "./sitemanager-dashboard";
 import SiteManagerRegister from "./sitemanager-register";
 import SiteManagerPendingOrders from "./sitemanager-pending-orders";
-import SiteManagerRecievedOrders from "./sitemanager-recieved-orders";
+import SiteManagerDeliveredOrders from "./sitemanager-delivered-orders";
+import SiteManagerReceivedOrders from "./sitemanager-received-orders";
 
 //Procurment Sfaff
 import ProcurementStaffLogin from "./procurementStaff-login";
@@ -40,6 +41,14 @@ import ProductCreate from "./product-create";
 //pendingOrders
 
 import PendingOrdersPS from "./pending-orders-ps";
+
+//placed orders
+
+import PlacedOrdersSP from "./placed-orders-sp";
+
+//Accepted Orders
+
+import AcceptedOrdersSP from "./accepted-orders-SP";
 
 import ManagerLogin from "./manager-login";
 import ManagerDashboard from "./manager-dashboard";
@@ -74,7 +83,8 @@ export {
 	SiteManagerDashboard,
 	SiteManagerRegister,
 	SiteManagerPendingOrders,
-	SiteManagerRecievedOrders,
+	SiteManagerDeliveredOrders,
+	SiteManagerReceivedOrders,
 
 	//Procurment Sfaff
 	ProcurementStaffLogin,
@@ -87,6 +97,11 @@ export {
 	//pending Orders
 	PendingOrdersPS,
 
+	//placed
+	PlacedOrdersSP,
+
+	//Accepted
+	AcceptedOrdersSP,
 	// Manager
 	ManagerLogin,
 	ManagerDashboard,

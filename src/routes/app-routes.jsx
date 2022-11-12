@@ -33,7 +33,8 @@ import {
 	SiteManagerDashboard,
 	SiteManagerRegister,
 	SiteManagerPendingOrders,
-	SiteManagerRecievedOrders,
+	SiteManagerDeliveredOrders,
+	SiteManagerReceivedOrders,
 
 	// Procurement Staff
 	ProcurementStaffLogin,
@@ -49,12 +50,19 @@ import {
 	//Pending Orders
 	PendingOrdersPS,
 
+	//placed orders
+	PlacedOrdersSP,
+
+	//Accepted Orders
+	AcceptedOrdersSP,
+
 	// Manager
 	ManagerLogin,
 	ManagerDashboard,
 	ManagerFurtherApproval,
 	ManagerRecivedOrder,
 	ManagerRejectOrder,
+
 } from "../pages";
 
 const AppRoutes = () => {
@@ -100,7 +108,8 @@ const AppRoutes = () => {
 					<Route exact path="/site-manager" element={<PrivateRoute permissionLevel="SITE_MANAGER" />}>
 						<Route exact path="/site-manager" element={<SiteManagerDashboard />} />
 						<Route exact path="/site-manager/pending-orders" element={<SiteManagerPendingOrders />} />
-						<Route exact path="/site-manager/recieved-orders" element={<SiteManagerRecievedOrders />} />
+						<Route exact path="/site-manager/delivered-orders" element={<SiteManagerDeliveredOrders />} />
+						<Route exact path="/site-manager/recieved-orders" element={<SiteManagerReceivedOrders />} />
 					</Route>
 
 					{/* Procurement Staff*/}
@@ -137,6 +146,11 @@ const AppRoutes = () => {
 					{/* Procurement Staff Register */}
 					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
 
+					{/* Placed Orders routes */}
+					<Route path="/placed-orders" element={<PlacedOrdersSP />} />
+
+					{/* Placed Orders routes */}
+					<Route path="/accepted-orders" element={<AcceptedOrdersSP />} />
 					{/* Check Login Status */}
 					<Route exact path="/manager/login" element={<CheckLoginStatus />}>
 						<Route exact path="/manager/login" element={<ManagerLogin />} />
