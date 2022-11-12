@@ -50,11 +50,18 @@ import {
 	//Pending Orders
 	PendingOrdersPS,
 
+	//placed orders
+	PlacedOrdersSP,
+
+	//Accepted Orders
+	AcceptedOrdersSP,
+
 	// Manager
 	ManagerLogin,
 	ManagerDashboard,
 	ManagerFurtherApproval,
 	ManagerRecivedOrder,
+  
 } from "../pages";
 
 const AppRoutes = () => {
@@ -138,6 +145,11 @@ const AppRoutes = () => {
 					{/* Procurement Staff Register */}
 					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
 
+					{/* Placed Orders routes */}
+					<Route path="/placed-orders" element={<PlacedOrdersSP />} />
+
+					{/* Placed Orders routes */}
+					<Route path="/accepted-orders" element={<AcceptedOrdersSP />} />
 					{/* Check Login Status */}
 					<Route exact path="/manager/login" element={<CheckLoginStatus />}>
 						<Route exact path="/manager/login" element={<ManagerLogin />} />
