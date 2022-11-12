@@ -41,6 +41,8 @@ import ProductCreate from "./product-create";
 
 import PendingOrdersPS from "./pending-orders-ps";
 
+import ManagerLogin from "./manager-login";
+import ManagerDashboard from "./manager-dashboard";
 export {
 	// Common
 	Home,
@@ -81,4 +83,8 @@ export {
 
 	//pending Orders
 	PendingOrdersPS,
+
+	// Manager
+	ManagerLogin,
+	ManagerDashboard,
 };

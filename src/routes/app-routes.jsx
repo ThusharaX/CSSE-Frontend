@@ -48,6 +48,10 @@ import {
 
 	//Pending Orders
 	PendingOrdersPS,
+
+	// Manager
+	ManagerLogin,
+	ManagerDashboard,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -129,6 +133,16 @@ const AppRoutes = () => {
 
 					{/* Procurement Staff Register */}
 					<Route path="/procurement-staff-register" element={<ProcurementStaffRegister />} />
+
+					{/* Check Login Status */}
+					<Route exact path="/manager/login" element={<CheckLoginStatus />}>
+						<Route exact path="/manager/login" element={<ManagerLogin />} />
+					</Route>
+
+					{/* Manager private Routes*/}
+					<Route exact path="/manager" element={<PrivateRoute permissionLevel="MANAGER" />}>
+						<Route exact path="/manager" element={<ManagerDashboard />} />
+					</Route>
 
 					{/* 404 */}
 					<Route path="*" element={<h1>404</h1>} />
