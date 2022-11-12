@@ -140,7 +140,9 @@ const SiteManagerReceivedOrders = () => {
 													<div className="text-left font-semibold">{order.productName}</div>
 												</td>
 												<td className="p-2 whitespace-nowrap">
-													<div className="text-center font-semibold bg-orange-500 rounded-sm text-white">{order.status}</div>
+													<div className="text-center font-semibold bg-orange-500 rounded-sm text-white">
+														{order.status}
+													</div>
 												</td>
 												{/* <td className="p-2 whitespace-nowrap">
 													{status === order._id ? (
